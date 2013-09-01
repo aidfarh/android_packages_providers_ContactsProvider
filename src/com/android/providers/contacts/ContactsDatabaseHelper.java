@@ -418,7 +418,7 @@ public class ContactsDatabaseHelper extends SQLiteOpenHelper {
         public static final String CONCRETE_NAME_VERIFIED =
             Tables.RAW_CONTACTS + "." + RawContacts.NAME_VERIFIED;
         public static final String CONCRETE_IS_RESTRICTED =
-            Tables.RAW_CONTACTS + ".is_restricted";
+            Tables.RAW_CONTACTS + "." + RawContacts.IS_RESTRICTED;
         public static final String PHONEBOOK_LABEL_PRIMARY =
             ContactsColumns.PHONEBOOK_LABEL_PRIMARY;
         public static final String PHONEBOOK_BUCKET_PRIMARY =
@@ -1026,7 +1026,7 @@ public class ContactsDatabaseHelper extends SQLiteOpenHelper {
                 RawContacts.SYNC2 + " TEXT, " +
                 RawContacts.SYNC3 + " TEXT, " +
                 RawContacts.SYNC4 + " TEXT, " +
-                "is_restricted INTEGER " +
+                RawContacts.IS_RESTRICTED + " INTEGER " +
         ");");
 
         db.execSQL("CREATE INDEX raw_contacts_contact_id_index ON " + Tables.RAW_CONTACTS + " (" +
@@ -1619,7 +1619,7 @@ public class ContactsDatabaseHelper extends SQLiteOpenHelper {
                 + RawContactsColumns.CONCRETE_SYNC2 + " AS " + RawContacts.SYNC2 + ","
                 + RawContactsColumns.CONCRETE_SYNC3 + " AS " + RawContacts.SYNC3 + ","
                 + RawContactsColumns.CONCRETE_SYNC4 + " AS " + RawContacts.SYNC4 + ","
-                + RawContactsColumns.CONCRETE_IS_RESTRICTED + " AS is_restricted";
+                + RawContactsColumns.CONCRETE_IS_RESTRICTED + " AS " + RawContacts.IS_RESTRICTED;
 
         String baseContactColumns =
                 Contacts.HAS_PHONE_NUMBER + ", "
